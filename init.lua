@@ -10,8 +10,8 @@ LOCATION="TEST_NODE"
 fahrenheit=1
 
 --setup the wifi SSID and password.
-SSID="2.4ghz_garlei"
-WIFIPWD="thesanders"
+SSID="MYSSID"
+WIFIPWD="MYSSIDPWD"
 
 function get_temp() 
    --layout top of web page
