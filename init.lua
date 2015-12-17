@@ -9,9 +9,14 @@ LOCATION="TEST_NODE"
 --set to 1 for Fahrenheit, 0 for Celsius
 fahrenheit=1
 
+--Value to offset the temperature to compensate for 
+--enclosed module with no airflow.
+offset=10
+
 --setup the wifi SSID and password.
-SSID="MYSSID"
-WIFIPWD="MYSSIDPWD"
+SSID="YOURSSID"
+
+WIFIPWD="YOURPASSWORD"
 
 function get_temp() 
    --layout top of web page
@@ -29,7 +34,8 @@ function get_temp()
    if( status == dht.OK ) then
        if (fahrenheit == 1 ) then
        --convert to Fahrenheit
-       temp=(temp*9/5+32)
+       temp=(temp*9/5+32)-offset 
+
        outbuf= outbuf.."Temperature: "..temp.." F"
        else
        --temp in Celsius
